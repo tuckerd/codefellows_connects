@@ -1,8 +1,9 @@
 CodefellowsConnects::Application.routes.draw do
+  devise_for :users, controllers: { registrations: "registrations"}
+
   root to: 'profiles#index'
 
   resources :profiles
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
