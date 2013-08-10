@@ -7,7 +7,11 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
-gem 'devise', '~>2.2.4'
+
+#authorization and authentication
+gem 'devise'
+gem 'cancan'
+gem 'rolify'
 
 gem 'simple_form'
 
