@@ -14,6 +14,9 @@ gem 'cancan'
 gem 'rolify'
 
 gem 'simple_form'
+gem 'gravatar_image_tag'
+gem 'font-awesome-sass-rails'
+gem 'bootstrap-sass'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -26,7 +29,6 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 
-  gem 'twitter-bootstrap-rails'
 end
 
 gem 'jquery-rails'

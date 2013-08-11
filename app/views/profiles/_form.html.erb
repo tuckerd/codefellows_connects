@@ -1,12 +1,64 @@
+<div class="row-fluid">
 <%= simple_form_for(@profile) do |f| %>
   <%= f.error_notification %>
-  <%= f.input :email, hint: "This will only change the displayed contact email, not your account email" %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :phone_number %>
-  <%= f.input :summary %>
-  <%= f.input :linkedin_site %>
-  <%= f.input :github_site %>
-  <%= f.input :website %>
+  <div class="span2">
+    <%= gravatar_image_tag @profile.email, alt: @profile.name %>
+  </div>
+  <div class="span6">
+    <h2>
+      <%= f.input :first_name %>
+      <%= f.input :last_name %>
+      <%= f.input :for_hire, as: :radio_buttons, collection: Profile.hire_choices %>
+    </h2>
+    <table class="profile_contact_info">
+      <tr>
+        <th scope="row" style="text-align: left">Phone Number</th>
+        <td><%= f.input :phone_number %></td>
+      </tr>
+      <tr>
+        <th scope="row" style="text-align: left">Email</th>
+        <td>  <%= f.input :email, hint: "This will only change the displayed contact email, not your account email" %>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row" style="text-align: left">LinkedIn</th>
+        <td><%= f.input :linkedin_site %></td>
+      </tr>
+      <tr>
+        <th scope="row" style="text-align: left">GitHub</th>
+        <td><%= f.input :github_site %></td>
+      </tr>
+      <tr>
+        <th scope="row" style="text-align: left">Website</th>
+        <td><%= f.input :website %></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div class="row-fluid">
+  <div class="span8">
+    <h3>Skills</h3>
+    <p>
+      NOT YET IMPLEMENTED
+    </p>
+    <h3>Summary</h3>
+    <p>
+      <%= f.input :summary %>
+    </p>
+    <h3>Courses</h3>
+      <ul>
+        NOT YET IMPLEMENTED        
+      </ul>
+  </div>
+</div>
+
+<div class="row-fluid">
+  <%= f.error :base %>
+  <button class="btn btn-primary">Upload Resume</button>
+  <button class="btn btn-primary">View Resume</button>
   <%= f.submit %>
+  <%= link_to 'Back', profiles_path %>
+</div>
 <% end %>
+

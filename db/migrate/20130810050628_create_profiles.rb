@@ -10,6 +10,8 @@ class CreateProfiles < ActiveRecord::Migration
       t.string :github_site
       t.string :website
 
+      t.string :for_hire
+
       t.timestamps
     end
   end

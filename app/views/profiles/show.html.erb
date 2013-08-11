@@ -5,9 +5,7 @@
   <div class="span6">
     <h2>
       <%= @profile.name %>
-      <% if @profile.for_hire %>
-        <span class="label label-success">For Hire!</span>
-      <% end %>
+        <span class="label label-success"><%= @profile.for_hire %></span>
     </h2>
     <table class="profile_contact_info">
       <%# if (current_user.is_student? && (current_user.student.id == @profile.id)) ||
@@ -26,11 +24,11 @@
         <td><%= @profile.linkedin_site %></td>
       </tr>
       <tr>
-        <th scope="row" style="text-align: left">LinkedIn</th>
+        <th scope="row" style="text-align: left">GitHub</th>
         <td><%= @profile.github_site %></td>
       </tr>
       <tr>
-        <th scope="row" style="text-align: left">LinkedIn</th>
+        <th scope="row" style="text-align: left">Website</th>
         <td><%= @profile.website %></td>
       </tr>
     </table>
@@ -41,72 +39,24 @@
   <div class="span8">
     <h3>Skills</h3>
     <p>
+      NOT YET IMPLEMENTED
+    </p>
+    <h3>Summary</h3>
+    <p>
       <%= @profile.summary %>
     </p>
-    <% if @profile.courses.size != 0 %>
-      <h3>Courses</h3>
+    <h3>Courses</h3>
       <ul>
-        <% @profile.user.courses.each do |course| %>
-          <li><%= link_to course.title, course_path(course) %></li>
-        <% end %>
+        NOT YET IMPLEMENTED        
       </ul>
-    <% end %>
-    <h3>Bio</h3>
-    <p>
-      <%= @profile.bio %>
-    </p>
   </div>
 </div>
 
 <div class="row-fluid">
   <button class="btn btn-primary">Download Resume</button>
   <%# if current_user.is_admin? || (current_user.is_student? && current_user.student_id == @profile.id) %>
-    <%= link_to "Edit Profile", edit_student_path(@profile), class: "btn btn-primary" %>
+    <%= link_to "Edit Profile", edit_profile_path(@profile), class: "btn btn-primary" %>
   <%# end -%>
 </div>
 
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Email:</b>
-  <%= @profile.email %>
-</p>
-
-<p>
-  <b>First name:</b>
-  <%= @profile.first_name %>
-</p>
-
-<p>
-  <b>Last name:</b>
-  <%= @profile.last_name %>
-</p>
-
-<p>
-  <b>Phone number:</b>
-  <%= @profile.phone_number %>
-</p>
-
-<p>
-  <b>Summary:</b>
-  <%= @profile.summary %>
-</p>
-
-<p>
-  <b>Linkedin site:</b>
-  <%= @profile.linkedin_site %>
-</p>
-
-<p>
-  <b>Github site:</b>
-  <%= @profile.github_site %>
-</p>
-
-<p>
-  <b>Website:</b>
-  <%= @profile.website %>
-</p>
-
-
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
 <%= link_to 'Back', profiles_path %>

@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20130810165434) do
     t.string   "linkedin_site"
     t.string   "github_site"
     t.string   "website"
+    t.string   "for_hire"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
     t.integer  "user_id"
