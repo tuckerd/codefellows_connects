@@ -57,6 +57,6 @@
   <%# if current_user.is_admin? || (current_user.is_student? && current_user.student_id == @profile.id) %>
     <%= link_to "Edit Profile", edit_profile_path(@profile), class: "btn btn-primary" %>
   <%# end -%>
+  <%= link_to 'Back', profiles_path, class: "btn btn-primary" %>
 </div>
 
-<%= link_to 'Back', profiles_path %>

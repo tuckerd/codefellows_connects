@@ -1,0 +1,26 @@
+<div class="navbar navbar-fixed-top navbar-inverse">
+  <a href="https://www.codefellows.org"><%= image_tag "cf_logo.png", id: "corner_logo" %></a>
+  <%= render 'layouts/navbar_account' %>
+  <div class="navbar-inner">
+    <div class="container">
+    <ul class="navbar">
+      <%= link_to "CodeFellows Connects", root_path, class: "brand" %>
+      <div class="nav">
+      <% if user_signed_in? %>
+        <% if current_user.has_role :admin %>
+          <%= render 'layouts/navbar_admin_links' %>
+          <%= render 'layouts/navbar_links' %>
+        <% end %>
+        <li><%= link_to "Courses", profiles_path, :class => "btn-btn-navbar" %></li>
+        <% if current_user.profile.nil? %>
+          <li><%= link_to "Create Profile", new_profile_path %></li>
+        <% else %> 
+          <li><%= link_to "My Profile", profile_path(current_user.profile) %></li>
+        <% end %>
+      <% end %>
+      </div>
+    </div>
+    </ul>
+    </div>
+  </div>
+</div>

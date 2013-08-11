@@ -11,7 +11,4 @@ class User < ActiveRecord::Base
           :remember_me, :profile
 
   has_one :profile
-
-  accepts_nested_attributes_for :roles
-  has_many :roles
 end

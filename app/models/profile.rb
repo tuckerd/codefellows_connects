@@ -1,4 +1,5 @@
 class Profile < ActiveRecord::Base
+  resourcify
   attr_accessible :email, :first_name, :last_name,
         :github_site, :linkedin_site, 
         :phone_number, :summary, :website,

@@ -1,0 +1,8 @@
+  <li><%= link_to "Students", profiles_path, :class => "btn-btn-navbar" %></li>
+<% if current_user.has_role? :partner %>
+  <li><%= link_to "My Company" %></li>
+<% end %>
+<% if current_user.has_role? :student %>
+  <li><%= link_to "Partners", profiles_path, :class => "btn-btn-navbar" %></li>
+<% end %>
+  <li><%= link_to "Connections" %>
